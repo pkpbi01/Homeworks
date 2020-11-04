@@ -29,10 +29,17 @@ namespace Homeworks
 
         static public int[] ReturnNumbersDivisibleByN(int n)
         {
-            int[] result = new int[1000 / n];
+            int[] result = new int[(1000 / n)];
+            int counter = 0;
             for (int i = 0; i <= 1000; i += n)
             {
-                result[i] = i;
+                if (i % n == 0 && i != 0)
+                {
+                    
+                    result[counter] = i;
+                    counter++;
+                }
+
             }
             return result;
         }
@@ -40,7 +47,7 @@ namespace Homeworks
         static public int SearchForNumbersWhoseSquareIsLessThanN(int n)
         {
             int result = 0;
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i < n; i++)
             {
                 if (i * i < n)
                 {
